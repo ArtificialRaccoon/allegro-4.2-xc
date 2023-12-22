@@ -42,8 +42,8 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           tag_name: Allegro-GCC1210-${{ steps.date.outputs.date }}
-          release_name: Allegro-GCC1210-${{ steps.date.outputs.date }}
-          files: ~/lib/djgpp/liballeg.a
+          name: Allegro-GCC1210-${{ steps.date.outputs.date }}
+          files: liballeg.a
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           draft: false
