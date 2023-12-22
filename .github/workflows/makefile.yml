@@ -34,11 +34,13 @@ jobs:
       - name: Compile DJGPP library
         run: ./xmake.sh lib
 
-      - name: Upload liballeg.a to GitHub Release
-        uses: actions/upload-release-asset@v1
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
         with:
-          upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ~/lib/djgpp/liballeg.a
-          asset_name: liballeg.a
-          asset_content_type: application/octet-stream
-          token: ${{ secrets.GITHUB_TOKEN }}
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
