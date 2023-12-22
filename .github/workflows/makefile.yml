@@ -43,7 +43,7 @@ jobs:
         with:
           tag_name: Allegro-GCC1210-${{ steps.date.outputs.date }}
           name: Allegro-GCC1210-${{ steps.date.outputs.date }}
-          files: liballeg.a
+          files: lib/djgpp/liballeg.a
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           draft: false
