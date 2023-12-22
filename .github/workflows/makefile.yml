@@ -1,0 +1,26 @@
+name: Download, Install DJGPP Toolchain, and Compile
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  setup-and-compile-djgpp:
+    runs-on: debian-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Download DJGPP toolchain
+        run: |
+          mkdir -p /usr/local/djgpp
+          curl -L https://github.com/andrewwutw/build-djgpp/releases/download/v3.3/djgpp-linux64-gcc1210.tar.bz2 -o /usr/local/djgpp/djgpp-linux64-gcc1210.tar.bz2
+
+      - name: Extract DJGPP toolchain
+        run: |
+          tar -xjf /usr/local/djgpp/djgpp-linux64-gcc1210.tar.bz2 -C /usr/local/djgpp/
+
+      - name: Compile DJGPP library
+        run: ./xmake.sh lib
