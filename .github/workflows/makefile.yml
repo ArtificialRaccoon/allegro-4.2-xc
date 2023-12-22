@@ -41,10 +41,9 @@ jobs:
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: nightly-tag-${{ steps.date.outputs.date }}
-          release_name: nightly-release-${{ steps.date.outputs.date }}
-          files: |
-            ~/lib/djgpp/liballeg.a
+          tag_name: Allegro-GCC1210-${{ steps.date.outputs.date }}
+          release_name: Allegro-GCC1210-${{ steps.date.outputs.date }}
+          files: ~/lib/djgpp/liballeg.a
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           draft: false
