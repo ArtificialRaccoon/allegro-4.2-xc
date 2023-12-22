@@ -41,6 +41,8 @@ jobs:
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
+          tag_name: nightly-tag-${{ steps.date.outputs.date }}
+          release_name: nightly-release-${{ steps.date.outputs.date }}
           files: |
             ~/lib/djgpp/liballeg.a
         env:
