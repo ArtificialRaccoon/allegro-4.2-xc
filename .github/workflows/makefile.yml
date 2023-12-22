@@ -20,11 +20,11 @@ jobs:
 
       - name: Download DJGPP toolchain
         run: |
-          curl -L https://github.com/andrewwutw/build-djgpp/releases/download/v3.3/djgpp-linux64-gcc1210.tar.bz2 -o ~/djgpp/djgpp-linux64-gcc1210.tar.bz2
+          curl -L https://github.com/andrewwutw/build-djgpp/releases/download/v3.3/djgpp-linux64-gcc1210.tar.bz2 -o ~/djgpp-linux64-gcc1210.tar.bz2
 
       - name: Extract DJGPP toolchain
         run: |
-          tar -xjf ~/djgpp/djgpp-linux64-gcc1210.tar.bz2 -C ~/djgpp/
+          tar -xjf ~/djgpp-linux64-gcc1210.tar.bz2 -C ~/
 
       - name: Compile DJGPP library
         run: ./xmake.sh lib
