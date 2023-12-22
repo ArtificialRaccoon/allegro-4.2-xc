@@ -37,11 +37,8 @@ jobs:
       - name: Upload liballeg.a to GitHub Release
         uses: actions/upload-release-asset@v1
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
           upload_url: ${{ github.event.release.upload_url }}
           asset_path: ~/lib/djgpp/liballeg.a
           asset_name: liballeg.a
           asset_content_type: application/octet-stream
-          asset_label: liballeg.a
           token: ${{ secrets.GITHUB_TOKEN }}
