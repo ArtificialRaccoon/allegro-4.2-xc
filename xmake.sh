@@ -9,7 +9,7 @@
 # for the target will be found with standard names.
 
 # Note: these paths are Mac OS X specific.
-XC_PATH=/usr/local/djgpp/bin
+XC_PATH=$HOME/djgpp/bin
 XPREFIX=i586-pc-msdosdjgpp-
 
 # 2. Put here the path for where things are to be installed.
@@ -18,7 +18,7 @@ XPREFIX=i586-pc-msdosdjgpp-
 
 # Note: unused. I don't recommend using install, it probably
 # won't work correctly. (msikma, 2016)
-INSTALL_BASE=/usr/local/djgpp/
+INSTALL_BASE=$HOME/djgpp/
 
 # Set up some environment variables and export them to GNU make.
 
