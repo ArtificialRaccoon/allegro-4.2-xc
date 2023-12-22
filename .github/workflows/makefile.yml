@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:  # Allow manual triggering of this workflow
 
 jobs:
   setup-and-compile-djgpp:
@@ -22,5 +23,5 @@ jobs:
         run: |
           tar -xjf /usr/local/djgpp/djgpp-linux64-gcc1210.tar.bz2 -C /usr/local/djgpp/
 
-      - name: Compile DJGPP library
+      - name: Compile Allegro library
         run: ./xmake.sh lib
