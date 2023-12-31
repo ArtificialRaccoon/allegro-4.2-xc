@@ -9,6 +9,8 @@ Originally, this version of Allegro was intended to be used with GCC 2.91.N. Som
 
 If you must compile this for a target other than DJGPP, you must edit `/include/allegro/platform/alplatf.h` and add the correct platform setting.
 
+**NOTE:  This is a fork (of a fork) of the development branch of user [SuperJamie](https://github.com/superjamie/allegro-4.2-xc).  This repository simply exists to provide a github runner to automatically build the library for DJGPP/GCC 12.1.0 (as used by the VSCode [DOS-Dev](https://marketplace.visualstudio.com/items?itemName=badlogicgames.dos-dev) extension).**
+
 Usage
 -----
 
